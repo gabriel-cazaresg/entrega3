@@ -1,0 +1,583 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap");
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: rgb(29.2970711297, 110.6778242678, 165.2029288703);
+    transform: translateY(-2px);
+}
+
+a:active {
+    transform: translateY(1px);
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+h2:hover:after {
+    width: 100px;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+p {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    opacity: 0.85;
+}
+
+p:hover {
+    opacity: 1;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+button:hover,
+.button:hover {
+    background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active,
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout común */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+section:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 40px 0;
+    }
+}
+
+section.banner {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+section.banner h1,
+section.banner p {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    section.banner {
+        padding: 40px 20px;
+    }
+}
+
+/* Header y navegación */
+header {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+header nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    padding: 10px 20px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header nav ul li a:hover {
+    color: #3498db;
+}
+
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #3498db;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header nav ul li a:hover::after {
+    width: 80%;
+}
+
+header nav ul li a:active::after {
+    background-color: #2ecc71;
+}
+
+@media (max-width: 768px) {
+    header nav ul li a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* Banner section */
+section:not(.banner)+section {
+    margin-top: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section>div {
+    margin-bottom: 40px;
+}
+
+section>div:last-child {
+    margin-bottom: 0;
+}
+
+section h1+p,
+section h2+p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: rgba(44, 62, 80, 0.8);
+}
+
+section:first-of-type div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+@media (min-width: 768px) {
+    section:first-of-type {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    section:first-of-type div:first-child {
+        align-items: flex-start;
+        margin-right: 40px;
+        flex: 1;
+    }
+
+    section:first-of-type div:last-child {
+        flex: 1;
+    }
+}
+
+/* Main content */
+main section div {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main section div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+main section div h3 {
+    color: #3498db;
+}
+
+@media (min-width: 768px) {
+    main section div:nth-child(even) {
+        animation: fadeInRight 1s ease-out;
+    }
+
+    main section div:nth-child(odd) {
+        animation: fadeInLeft 1s ease-out;
+    }
+}
+
+@media (min-width: 992px) {
+    main section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    main section>h2,
+    main section>h2+p {
+        grid-column: 1/-1;
+    }
+
+    main section div {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    main section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    main section>h2,
+    main section>h2+p {
+        grid-column: 1/-1;
+    }
+
+    main section div {
+        margin-bottom: 0;
+    }
+}
+
+/* Servicios page */
+@media (min-width: 992px) {
+    body:has(section h1:contains("Nuestros Servicios")) main section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios")) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios")) h2 {
+        grid-column: 1/-1;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div:nth-child(3) {
+        border: 2px solid #3498db;
+        transform: scale(1.05);
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div:nth-child(3):hover {
+        transform: scale(1.05) translateY(-8px);
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div:nth-child(3) h3 {
+        color: #3498db;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div p {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #3498db;
+        margin: 20px 0;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div ul {
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div ul li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div ul li::before {
+        content: "✓";
+        color: #2ecc71;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 992px) {
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div:nth-child(3) {
+        border: 2px solid #3498db;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div p {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #3498db;
+        margin: 20px 0;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div ul {
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div ul li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    body:has(section h1:contains("Nuestros Servicios")) section:has(h2:contains("Planes y Precios"))>div ul li::before {
+        content: "✓";
+        color: #2ecc71;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+}
+
+/* Testimonios section */
+section:has(h2:contains("Testimonios")) div {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+
+section:has(h2:contains("Testimonios")) div::before {
+    content: '"';
+    font-size: 5rem;
+    color: rgba(52, 152, 219, 0.1);
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: serif;
+    line-height: 1;
+}
+
+section:has(h2:contains("Testimonios")) div h3 {
+    color: #3498db;
+    display: inline-block;
+    position: relative;
+}
+
+section:has(h2:contains("Testimonios")) div h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: #e74c3c;
+    transition: width 0.3s ease;
+}
+
+section:has(h2:contains("Testimonios")) div h3:hover::after {
+    width: 100%;
+}
+
+section:has(h2:contains("Testimonios")) div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/*# sourceMappingURL=style.css.map */
